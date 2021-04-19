@@ -54,7 +54,7 @@ for imgPath in labelDict:
         img = img.crop((widthSpill//2, heightSpill//2, img.size[0] - (widthSpill//2) - wPad, img.size[1] - (heightSpill//2) - hPad))
         for w in range(widthMult):
             for h in range(heightMult):
-                left = w * windowSize 
+                left = w * windowSize
                 right = (w + 1) * windowSize
                 top = h * windowSize
                 bot = (h + 1) * windowSize
@@ -64,7 +64,7 @@ for imgPath in labelDict:
                 imgDataToDump.append(np.array(croppedImg))
                 labelDataToDump.append(label)
 
-        
+
     else : #center crop
         #img are width x height
         top = img.size[1]  // 2 - 113
@@ -81,6 +81,6 @@ for imgPath in labelDict:
 imgDataToDump = np.array(imgDataToDump)
 labelDataToDump = np.array(labelDataToDump)
 with open('imgData.npy', 'wb') as f:
-    np.save(f, imgDataToDump) 
+    np.save(f, imgDataToDump)
 with open('labelData.npy', 'wb') as f:
-    np.save(f, labelDataToDump) 
+    np.save(f, labelDataToDump)
